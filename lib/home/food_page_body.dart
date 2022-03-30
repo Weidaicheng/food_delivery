@@ -145,6 +145,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                     ),
                     SizedBox(height: 20,),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         IconAndTextWidget(
                             icon: Icons.circle,
