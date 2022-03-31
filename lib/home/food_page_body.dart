@@ -82,7 +82,83 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               )
             ],
           ),
-        )
+        ),
+        // list of food and images
+        ListView.builder(
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: 10,
+              itemBuilder: (context, index) {
+                return Container(
+                  margin: EdgeInsets.only(left: Dimensions.width_20, right: Dimensions.width_20, bottom: Dimensions.height_10),
+                  child: Row(
+                    children: [
+                      // image section
+                      Container(
+                        width: Dimensions.listViewImgSize,
+                        height: Dimensions.listViewImgSize,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(Dimensions.radius_20),
+                            color: Colors.white38,
+                            image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: AssetImage(
+                                    "assets/image/food0.png"
+                                )
+                            )
+                        ),
+                      ),
+                      // text container
+                      Expanded(
+                        child: Container(
+                          height: Dimensions.listViewTextContSize,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(Dimensions.radius_20),
+                              bottomRight: Radius.circular(Dimensions.radius_20),
+                            ),
+                            color: Colors.white,
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.only(
+                                left: Dimensions.width_10,
+                                right: Dimensions.width_10),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                BigText(text: "Nutritious fruit meal in China"),
+                                SizedBox(height: Dimensions.height_10,),
+                                SmallText(text: "With Chinese characteristics"),
+                                SizedBox(height: Dimensions.height_10,),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    IconAndTextWidget(
+                                        icon: Icons.circle,
+                                        text: "Normal",
+                                        iconColor: AppColors.iconColor1),
+                                    SizedBox(width: Dimensions.width_5),
+                                    IconAndTextWidget(
+                                        icon: Icons.location_on,
+                                        text: "1.7km",
+                                        iconColor: AppColors.mainColor),
+                                    SizedBox(width: Dimensions.width_5),
+                                    IconAndTextWidget(
+                                        icon: Icons.timer_rounded,
+                                        text: "32min",
+                                        iconColor: AppColors.iconColor2),
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                );
+              }),
       ],
     );
   }
@@ -176,12 +252,12 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                             icon: Icons.circle,
                             text: "Normal",
                             iconColor: AppColors.iconColor1),
-                        SizedBox(width: Dimensions.width_10),
+                        SizedBox(width: Dimensions.width_5),
                         IconAndTextWidget(
                             icon: Icons.location_on,
                             text: "1.7km",
                             iconColor: AppColors.mainColor),
-                        SizedBox(width: Dimensions.width_10),
+                        SizedBox(width: Dimensions.width_5),
                         IconAndTextWidget(
                             icon: Icons.timer_rounded,
                             text: "32min",
@@ -193,7 +269,6 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               ),
             ),
           ),
-
         ],
       ),
     );
