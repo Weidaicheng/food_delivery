@@ -17,6 +17,7 @@ class Dimensions {
   static double width_5 = width_10 * 0.5;
   static double width_15 = width_10 * 1.5;
   static double width_20 = width_10 * 2.0;
+  static double width_25 = width_10 * 2.5;
   static double width_30 = width_10 * 3.0;
   static double width_45 = width_10 * 4.5;
 
