@@ -4,7 +4,7 @@ import 'package:food_delivery/data/repository/popular_product_repo.dart';
 import 'package:get/get.dart';
 
 Future<void> init() async {
-  Get.lazyPut(() => ApiClient(appBaseUrl: "https://www.dbestech.com"));
+  Get.lazyPut(() => ApiClient(appBaseUrl: "http://mvs.bslmeiyu.com"));
   Get.lazyPut(() => PopularProductRepo(apiClient: Get.find()));
   Get.lazyPut(() => PopularProductController(popularProductRepo: Get.find()));
 }
